@@ -69,7 +69,7 @@ everyone.now.next = function(pass) {
             if(scores[i]) {
               scores[i].score += 1;
             } else {
-              scores[i] = {title: contestants[i].title, scores: 1};
+              scores[i] = {title: contestants[i], score: 1};
             }
           }
         }
