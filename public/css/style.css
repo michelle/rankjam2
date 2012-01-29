@@ -2,3 +2,18 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,pre,code,form,fields
 a {outline: none;} /* Gets rid of Firefox's dotted borders */
 a img {border: none;} /* Gets rid of IE's blue borders */
 
+
+.fbLoginButton {
+    background-image:url('http://petercottle.com/friendMapper2/fblogin.png');
+    background-repeat:no-repeat;
+    width:390px;
+    height:66px;
+}
+
+.fbLoginButton:hover {
+    background-position:0px -66px;
+}
+
+.fbLoginButton:active {
+    background-position:0px -132px;
+}

@@ -10,12 +10,58 @@
  
 <link href="/css/style.css" rel="stylesheet" type="text/css"> 
 
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
 <script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+    FB.init({      
+      appId      : '302829396430988', // App ID
+      channelUrl : '//www.petermcottle.com/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true,  // parse XFBML 
+      oatuh      : true,
+    });            // Additional initialization code here    
+  };
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     d.getElementsByTagName('head')[0].appendChild(js);
+   }(document));
+
+var fbLoginResponse;
+
+function fbLogin() {
+    FB.login(function(response)
+    {
+        if(response.authResponse) {
+
+            console.log(response.authResponse);
+            fbLoginResponse = response;
+
+			startFacebookStuff();
+
+         } else { 
+         	alert("oh no:(((");
+         }
+    },{scope:'user_about_me'});
+}
+
+function startFacebookStuff()
+{
+alert("youre logged in!");
+}
+</script>
 
 </head> 
  
 <body> 
 <%-body%>
+
+<div style="color:black;cursor:pointer" onclick="javascript:fbLogin()" class="fbLoginButton"></div>
+
 </body> 
 </html> 
