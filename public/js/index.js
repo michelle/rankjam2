@@ -17,7 +17,6 @@ $(document).ready(function(){
 
   now.finish = function(scores){
     $('#body').empty();
-    console.log(scores);
     scores.sort(function sortNumber(a,b)  {
       return a.score - b.score;
     });
