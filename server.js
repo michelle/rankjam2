@@ -76,7 +76,7 @@ everyone.now.next = function(pass) {
       }
       for(var i = 0; i < scores.length; i++) {
         if(!scores[i]) {
-          scores[i] = {title: contestants[i], scores: 0};
+          scores[i] = {title: contestants[i], score: 0};
         }
       }
       everyone.now.finish(scores);
