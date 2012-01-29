@@ -5,6 +5,8 @@ var app =  express.createServer();
 var nowjs = require('now');
 var everyone = nowjs.initialize(app);
 
+var scores;
+
 // Initialize main server
 app.use(express.bodyParser());
 
@@ -54,15 +56,17 @@ everyone.now.spit = function(){
   console.log('current', current);
 };
 nowjs.on('connect', function(){
-  
-  this.now.change(contestants[current], current);
-
+  if(scores) {
+    this.now.finish(scores);
+  } else {
+    this.now.change(contestants[current], current);
+  }
 });
 everyone.now.next = function(pass) {
   if (pass == '333') {
     current++;
     if(current == contestants.length) {
-      var scores = [];
+      scores = [];
       for(var token in users) {
         for(var i in users[token]) {
           if(users[token][i] === true) {
