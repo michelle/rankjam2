@@ -17,3 +17,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 .fbLoginButton:active {
     background-position:0px -132px;
 }
+
+#body {
+  opacity: 0;
+}
