@@ -62,7 +62,7 @@ everyone.now.next = function(pass) {
   if (pass == '333') {
     current++;
     if(current == contestants.length) {
-      var scores = [];
+      var scores = {};
       for(var token in users) {
         for(var i in users[token]) {
           if(users[token][i] === true) {
